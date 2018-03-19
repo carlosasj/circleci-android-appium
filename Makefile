@@ -8,6 +8,7 @@ generate:
 		[[ -f android/api-$$api-node8-alpha/Dockerfile ]] && \
 			rm -f android/api-$$api-node8-alpha/Dockerfile; \
 		sed s/{{ANDROID_API}}/$$api/ < base.Dockerfile > android/api-$$api-node8-alpha/Dockerfile; \
+		cp wait-for-device.sh android/api-$$api-node8-alpha; \
 	done
 
 push_master: tag

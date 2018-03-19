@@ -14,6 +14,8 @@ RUN sudo apt-get install libqt5widgets5 && \
 
 RUN sh -c 'echo "no" | avdmanager create avd -f -n test -k "system-images;android-23;google_apis;x86"'
 
+COPY wait-for-device.sh /wait-for-device.sh
+
 ENV PATH="$HOME/.npm-global/bin:$PATH"
 
 WORKDIR /home/circleci/code
