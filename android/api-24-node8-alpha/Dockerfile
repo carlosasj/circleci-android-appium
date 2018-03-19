@@ -9,8 +9,7 @@ RUN sudo apt-get install libqt5widgets5 && \
     sdkmanager "system-images;android-24;google_apis;x86" && \
     npm config set prefix '~/.npm-global' && \
     echo 'export PATH="$HOME/.npm-global/bin:$PATH"' >> ~/.bashrc && \
-    npm install -g appium && \
-    rm -rf /var/lib/apt/lists/*
+    npm install -g appium
 
 RUN sh -c 'echo "no" | avdmanager create avd -f -n test -k "system-images;android-24;google_apis;x86"'
 
